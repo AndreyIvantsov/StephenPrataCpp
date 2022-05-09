@@ -9,3 +9,6 @@ SUBDIRS += \
 
 HEADERS += \
     common.h
+
+DISTFILES += \
+    Template.txt
