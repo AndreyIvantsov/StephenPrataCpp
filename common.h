@@ -1,9 +1,14 @@
-const bool OS_WIN = false;
 
 void prepareConsole()
 {
-    #if OS_WIN == true 
-        system("chcp 1251 > nul");
+    #ifdef _WIN32
+        // Для корректной работы кодировки UTF-8 в консоли
+        // Windows 10 и 11 необходимо в параметрах
+        // Время и язык -> Язык и регион -> Административные языковые
+        // параметры -> вкладка Дополнительно -> Изменить язык системы ->
+        // Установить галочку "Бета версия: Использовать Юникод (UTF-8)
+        // для поддержки языка во всем мире"
+        system("chcp utf-8 > nul");
         system("cls");
     #else
         system("clear");
@@ -12,7 +17,7 @@ void prepareConsole()
 
 void pauseConsole()
 {
-    #if OS_WIN == true 
+    #ifdef _WIN32
         system("pause");
-    #endif 
+    #endif
 }

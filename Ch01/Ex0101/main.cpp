@@ -6,15 +6,22 @@
 
 #include <iostream>
 
+#include "../../common.h"
+
 using namespace std;
 
-int main()
+int main(int argc, char* argv[])
 {
-    //system("cls");
-    setlocale(0, "");
+    prepareConsole();
+
+    cout << "\n";
     cout << "АДРЕС\n";
     cout << "-------------------------------\n";
     cout << "Иванцов Андрей Александрович\n";
     cout << "183038 г. Мурманск, пр. Ленина\n\n";
-    //system("pause");
+
+    pauseConsole();
+
+    return 0;
+
 }
