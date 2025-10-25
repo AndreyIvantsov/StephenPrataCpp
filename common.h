@@ -1,3 +1,4 @@
+const bool OS_WIN = true;
 
 void prepareConsole()
 {
@@ -9,7 +10,7 @@ void prepareConsole()
         // Установить галочку "Бета версия: Использовать Юникод (UTF-8)
         // для поддержки языка во всем мире"
         system("chcp utf-8 > nul");
-        system("cls");
+        //system("cls");
     #else
         system("clear");
     #endif

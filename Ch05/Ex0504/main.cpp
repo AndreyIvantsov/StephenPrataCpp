@@ -3,7 +3,7 @@
  *  Глава 5. Упражнение 4.                                                       *
  *                                                                               *
  *  Дафна инвестировала $100 под простые 10%. Другими словами, ежегодно          *
- *  инвестиция должна приносить 10% инвестированной суммы, т.е. $10 каждый год:  * 
+ *  инвестиция должна приносить 10% инвестированной суммы, т.е. $10 каждый год:  *
  *                                                                               *
  *                  прибыль = 0,10 х исходный баланс.                            *
  *                                                                               *
@@ -31,11 +31,11 @@ int main()
     const float SimplePercent = 0.1f;           // Коэффициент по простому проценту
     const float CompoundPercent = 0.05f;        // Коэффициент по сложному проценту
     const float startBallanceSimpPer = 100.0f;  // Стартовый баланс по сложному проценту
-    
-    float ballanceSimpPer = startBallanceSimpPer;   // Балланс по простому проценту
-    float ballfnceCompPer = 100.0f;                 // Балланс по сложному проценту
 
-    #if OS_WIN == true 
+    float ballanceSimpPer = startBallanceSimpPer;   // Баланс по простому проценту
+    float ballanceCompPer = 100.0f;                 // Баланс по сложному проценту
+
+    #if OS_WIN == true
         system("chcp 1251 > nul");
         system("cls");
     #else
@@ -49,22 +49,22 @@ int main()
 
     int year;
 
-    for (year = 1; ballanceSimpPer >= ballfnceCompPer; year++)
+    for (year = 1; ballanceSimpPer >= ballanceCompPer; year++)
     {
         ballanceSimpPer += startBallanceSimpPer * SimplePercent;
-        ballfnceCompPer += ballfnceCompPer * CompoundPercent;
-        cout 
-            << " " << year << "\t\t" 
-            << ballanceSimpPer << "\t\t\t" 
-            << ballfnceCompPer << endl;
+        ballanceCompPer += ballanceCompPer * CompoundPercent;
+        cout
+            << " " << year << "\t\t"
+            << ballanceSimpPer << "\t\t\t"
+            << ballanceCompPer << endl;
     }
-     
+
     cout << "-----------------------------------------------------\n\n";
 
     cout << "Ответ: сумма баланса Клео (сложный процент) превысит\n";
     cout << "сумму баланса Дафны (простой процент) через " << year - 1 << " лет.\n\n";
 
-    #if OS_WIN == true 
+    #if OS_WIN == true
         system("pause");
     #endif
 }
